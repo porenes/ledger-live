@@ -35,7 +35,6 @@ import { checkLibs } from "@ledgerhq/live-common/lib/sanityChecks";
 import { FeatureToggle } from "@ledgerhq/live-common/lib/featureFlags";
 import { useCountervaluesExport } from "@ledgerhq/live-common/lib/countervalues/react";
 import { pairId } from "@ledgerhq/live-common/lib/countervalues/helpers";
-
 import { NftMetadataProvider } from "@ledgerhq/live-common/lib/nft";
 import { ToastProvider } from "@ledgerhq/live-common/lib/notifications/ToastProvider";
 import { GlobalCatalogProvider } from "@ledgerhq/live-common/lib/platform/providers/GlobalCatalogProvider";
