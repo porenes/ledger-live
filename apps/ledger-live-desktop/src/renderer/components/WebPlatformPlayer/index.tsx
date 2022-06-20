@@ -70,7 +70,7 @@ const Loader = styled.div`
 `;
 
 type WebPlatformPlayerConfig = {
-  topBarConfig?: TopBarConfig,
+  topBarConfig?: TopBarConfig;
 };
 
 type Props = {
