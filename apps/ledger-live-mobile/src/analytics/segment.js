@@ -39,11 +39,13 @@ const appVersion = `${VersionNumber.appVersion ||
 
 const { ANALYTICS_LOGS, ANALYTICS_TOKEN } = Config;
 
-const extraProperties = store => {
+const extraProperties = (store, sensitive = false) => {
   const state: State = store.getState();
-  const systemLanguage = RNLocalize.getLocales()[0]?.languageTag;
-  const language = languageSelector(state);
-  const region = localeSelector(state);
+  const systemLanguage = sensitive
+    ? null
+    : RNLocalize.getLocales()[0]?.languageTag;
+  const language = sensitive ? null : languageSelector(state);
+  const region = sensitive ? null : localeSelector(state);
   const devices = knownDevicesSelector(state);
 
   const lastDevice =
@@ -61,7 +63,7 @@ const extraProperties = store => {
     androidVersionCode: getAndroidVersionCode(VersionNumber.buildVersion),
     androidArchitecture: getAndroidArchitecture(VersionNumber.buildVersion),
     environment: ANALYTICS_LOGS ? "development" : "production",
-    systemLanguage,
+    systemLanguage: sensitive ? null : systemLanguage,
     language,
     region: region?.split("-")[1] || region,
     platformOS: Platform.OS,
@@ -119,6 +121,7 @@ export const track = (
   event: string,
   properties: ?Object,
   mandatory: ?boolean,
+  sensitive: ?boolean,
 ) => {
   Sentry.addBreadcrumb({
     message: event,
@@ -135,7 +138,7 @@ export const track = (
   }
 
   const allProperties = {
-    ...extraProperties(storeInstance),
+    ...extraProperties(storeInstance, sensitive),
     ...properties,
   };
 
@@ -190,6 +193,7 @@ export const screen = (
   category: string,
   name: ?string,
   properties: ?Object,
+  sensitive: ?boolean,
 ) => {
   const title = `Page ${category + (name ? ` ${name}` : "")}`;
   Sentry.addBreadcrumb({
@@ -203,7 +207,7 @@ export const screen = (
   }
 
   const allProperties = {
-    ...extraProperties(storeInstance),
+    ...extraProperties(storeInstance, sensitive),
     ...properties,
   };
 

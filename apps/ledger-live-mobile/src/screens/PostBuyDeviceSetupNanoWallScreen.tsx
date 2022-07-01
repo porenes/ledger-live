@@ -42,6 +42,7 @@ export default function PostBuyDeviceSetupNanoWallScreen() {
         name="Have you Received Device?"
         type="drawer"
         source={currentRoute}
+        sensitive
       />
       {/* A transparent clickable overlay filling the remaining space on the screen */}
       <Pressable

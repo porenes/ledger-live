@@ -7,9 +7,15 @@ type Props = Partial<{
 }> & {
   category: string;
   name?: string;
+  sensitive?: boolean;
 };
 
-export default function TrackScreen({ category, name, ...props }: Props) {
+export default function TrackScreen({
+  category,
+  name,
+  sensitive = false,
+  ...props
+}: Props) {
   const isFocused = useIsFocused();
   const isFocusedRef = useRef<boolean>();
 
@@ -18,10 +24,10 @@ export default function TrackScreen({ category, name, ...props }: Props) {
       isFocusedRef.current = isFocused;
 
       if (isFocusedRef.current) {
-        screen(category, name, props);
+        screen(category, name, props, sensitive);
       }
     }
-  }, [category, name, props, isFocused]);
+  }, [category, name, props, isFocused, sensitive]);
 
   return null;
 }
