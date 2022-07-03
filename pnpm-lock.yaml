@@ -487,11 +487,11 @@ importers:
       '@ledgerhq/errors': workspace:^
       '@ledgerhq/hw-transport': workspace:^
       '@ledgerhq/hw-transport-http': workspace:^
+      '@ledgerhq/hw-transport-react-native-ble': workspace:*
       '@ledgerhq/live-common': workspace:^
       '@ledgerhq/logs': workspace:^
       '@ledgerhq/native-ui': workspace:^
       '@ledgerhq/react-native-hid': workspace:^
-      '@ledgerhq/react-native-hw-transport-ble': workspace:^
       '@ledgerhq/react-native-passcode-auth': ^2.1.0
       '@polkadot/reactnative-identicon': 2.2.1
       '@polkadot/x-randomvalues': 9.1.1
@@ -685,11 +685,11 @@ importers:
       '@ledgerhq/errors': link:../../libs/ledgerjs/packages/errors
       '@ledgerhq/hw-transport': link:../../libs/ledgerjs/packages/hw-transport
       '@ledgerhq/hw-transport-http': link:../../libs/ledgerjs/packages/hw-transport-http
+      '@ledgerhq/hw-transport-react-native-ble': link:../../libs/ledgerjs/packages/hw-transport-react-native-ble
       '@ledgerhq/live-common': link:../../libs/ledger-live-common
       '@ledgerhq/logs': link:../../libs/ledgerjs/packages/logs
       '@ledgerhq/native-ui': link:../../libs/ui/packages/native
       '@ledgerhq/react-native-hid': link:../../libs/ledgerjs/packages/react-native-hid
-      '@ledgerhq/react-native-hw-transport-ble': link:../../libs/ledgerjs/packages/react-native-hw-transport-ble
       '@ledgerhq/react-native-passcode-auth': 2.1.0
       '@polkadot/reactnative-identicon': 2.2.1_jtrxi44z2zn3egoyupbz6wol6a
       '@polkadot/x-randomvalues': 9.1.1
@@ -913,6 +913,7 @@ importers:
       '@ledgerhq/json-bignumber': ^1.1.0
       '@ledgerhq/live-app-sdk': ^0.6.1
       '@ledgerhq/logs': workspace:^
+      '@ledgerhq/types-devices': workspace:^
       '@polkadot/types': 8.5.1
       '@polkadot/types-known': 8.5.1
       '@polkadot/util': 9.2.1
@@ -1071,6 +1072,7 @@ importers:
       '@ledgerhq/json-bignumber': 1.1.0
       '@ledgerhq/live-app-sdk': 0.6.1
       '@ledgerhq/logs': link:../ledgerjs/packages/logs
+      '@ledgerhq/types-devices': link:../ledgerjs/packages/types-devices
       '@polkadot/types': 8.5.1
       '@polkadot/types-known': 8.5.1
       '@polkadot/util': 9.2.1
@@ -2025,6 +2027,142 @@ importers:
       ts-jest: 27.1.4_3y7pzupgu3ueocdatbfldfrs3i
       ts-node: 10.7.0_33lso24kgdvwdhve7eirdtgycu
       typescript: 4.6.4
+
+  libs/ledgerjs/packages/hw-transport-react-native-ble:
+    specifiers:
+      '@ledgerhq/errors': workspace:^
+      '@ledgerhq/hw-transport': workspace:^
+      '@ledgerhq/logs': workspace:^
+      '@types/jest': '*'
+      '@types/node': '*'
+      documentation: 13.2.4
+      jest: ^27.4.7
+      react: '*'
+      react-native: '*'
+      rimraf: '*'
+      rxjs: ^6.6.7
+      source-map-support: '*'
+      ts-jest: ^27.1.2
+      ts-node: ^10.4.0
+      typescript: ^4
+    dependencies:
+      '@ledgerhq/errors': link:../errors
+      '@ledgerhq/hw-transport': link:../hw-transport
+      '@ledgerhq/logs': link:../logs
+      rxjs: 6.6.7
+    devDependencies:
+      '@types/jest': 27.5.1
+      '@types/node': 17.0.32
+      documentation: 13.2.4
+      jest: 27.5.1_ts-node@10.7.0
+      react: 17.0.2
+      react-native: 0.67.3_react@17.0.2
+      rimraf: 3.0.2
+      source-map-support: 0.5.21
+      ts-jest: 27.1.4_ibhx3ehxrt2kgmkik4bkzmyeei
+      ts-node: 10.7.0_33lso24kgdvwdhve7eirdtgycu
+      typescript: 4.6.4
+
+  libs/ledgerjs/packages/hw-transport-react-native-ble/example:
+    specifiers:
+      '@babel/core': ^7.12.10
+      '@babel/plugin-transform-named-capturing-groups-regex': ^7.16.8
+      '@babel/runtime': ^7.12.5
+      '@ledgerhq/hw-transport-react-native-ble': workspace:*
+      '@ledgerhq/live-common': workspace:^
+      '@ledgerhq/logs': workspace:^
+      '@react-native-community/cli-platform-android': ^6.3.0
+      '@react-native-community/cli-platform-ios': ^6.0.1
+      '@react-native-community/eslint-config': ^2.0.0
+      '@tradle/react-native-http': ^2.0.0
+      asyncstorage-down: ^4.2.0
+      babel-jest: ^26.6.3
+      babel-plugin-module-resolver: ^4.0.0
+      browserify-zlib: ~0.2.0
+      console-browserify: ^1.2.0
+      constants-browserify: ^1.0.0
+      dns.js: ^1.0.1
+      domain-browser: ^4.22.0
+      expo-modules-core: ^0.6.5
+      https-browserify: ~1.0.0
+      jest: ^26.6.3
+      metro: ^0.67.0
+      metro-config: ^0.67.0
+      metro-extra-config: workspace:*
+      metro-minify-uglify: ^0.67.0
+      metro-react-native-babel-preset: ^0.67.0
+      metro-resolver: ^0.67.0
+      metro-transform-worker: ^0.67.0
+      node-libs-react-native: ^1.2.1
+      path-browserify: 1.0.1
+      querystring-es3: ~0.2.0
+      react: 17.0.2
+      react-native: 0.67.3
+      react-native-crypto: ^2.2.0
+      react-native-level-fs: ^3.0.0
+      react-native-os: ^1.2.6
+      react-native-randombytes: ^3.6.1
+      react-native-tcp: ^4.0.0
+      react-native-udp: ^4.1.2
+      readable-stream: 3.6.0
+      rn-nodeify: 10.3.0
+      rxjs: ^6.6.6
+      stream-browserify: ^3.0.0
+      timers-browserify: ^2.0.12
+      tty-browserify: 0.0.1
+      url: ^0.11.0
+      vm-browserify: 1.1.2
+      yargs: ^15.3.1
+    dependencies:
+      '@babel/plugin-transform-named-capturing-groups-regex': 7.17.10_@babel+core@7.18.5
+      '@ledgerhq/hw-transport-react-native-ble': link:..
+      '@ledgerhq/live-common': link:../../../../ledger-live-common
+      '@ledgerhq/logs': link:../../logs
+      '@react-native-community/cli-platform-android': 6.3.0
+      '@react-native-community/cli-platform-ios': 6.2.0
+      '@tradle/react-native-http': 2.0.1
+      asyncstorage-down: 4.2.0
+      browserify-zlib: 0.2.0
+      console-browserify: 1.2.0
+      constants-browserify: 1.0.0
+      dns.js: 1.0.1
+      domain-browser: 4.22.0
+      expo-modules-core: 0.6.5
+      https-browserify: 1.0.0
+      node-libs-react-native: 1.2.1
+      path-browserify: 1.0.1
+      querystring-es3: 0.2.1
+      react: 17.0.2
+      react-native: 0.67.3_shn3lkepuadv4od4dudas6ijbq
+      react-native-crypto: 2.2.0_v72yjuw4rl7vyuxwtxvpeodopu
+      react-native-level-fs: 3.0.1_asyncstorage-down@4.2.0
+      react-native-os: 1.2.6
+      react-native-randombytes: 3.6.1
+      react-native-tcp: 4.0.0_react-native@0.67.3
+      react-native-udp: 4.1.5
+      readable-stream: 3.6.0
+      rn-nodeify: 10.3.0
+      rxjs: 6.6.7
+      stream-browserify: 3.0.0
+      timers-browserify: 2.0.12
+      tty-browserify: 0.0.1
+      url: 0.11.0
+      vm-browserify: 1.1.2
+    devDependencies:
+      '@babel/core': 7.18.5
+      '@babel/runtime': 7.18.2
+      '@react-native-community/eslint-config': 2.0.0_jest@26.6.3
+      babel-jest: 26.6.3_257wgdvestm3ob2nxzik53knai
+      babel-plugin-module-resolver: 4.1.0
+      jest: 26.6.3_metro@0.67.0
+      metro: 0.67.0
+      metro-config: 0.67.0_h77kaxayu5kga6qsud7rauzt6a
+      metro-extra-config: link:../../../../../tools/metro-extra-config
+      metro-minify-uglify: 0.67.0
+      metro-react-native-babel-preset: 0.67.0
+      metro-resolver: 0.67.0
+      metro-transform-worker: 0.67.0_metro-minify-uglify@0.67.0
+      yargs: 15.4.1
 
   libs/ledgerjs/packages/hw-transport-web-ble:
     specifiers:
@@ -9340,6 +9478,47 @@ packages:
       - utf-8-validate
     dev: true
 
+  /@jest/core/26.6.3_metro@0.67.0:
+    resolution: {integrity: sha512-xvV1kKbhfUqFVuZ8Cyo+JPpipAHHAV3kcDBftiduK8EICXmTFddryy3P7NfZt8Pv37rA9nEJBKCCkglCPt/Xjw==}
+    engines: {node: '>= 10.14.2'}
+    dependencies:
+      '@jest/console': 26.6.2
+      '@jest/reporters': 26.6.2_metro@0.67.0
+      '@jest/test-result': 26.6.2
+      '@jest/transform': 26.6.2_metro@0.67.0
+      '@jest/types': 26.6.2
+      '@types/node': 17.0.32
+      ansi-escapes: 4.3.2
+      chalk: 4.1.2
+      exit: 0.1.2
+      graceful-fs: 4.2.10
+      jest-changed-files: 26.6.2
+      jest-config: 26.6.3_metro@0.67.0
+      jest-haste-map: 26.6.2_metro@0.67.0
+      jest-message-util: 26.6.2
+      jest-regex-util: 26.0.0
+      jest-resolve: 26.6.2
+      jest-resolve-dependencies: 26.6.3_metro@0.67.0
+      jest-runner: 26.6.3_metro@0.67.0
+      jest-runtime: 26.6.3_metro@0.67.0
+      jest-snapshot: 26.6.2_metro@0.67.0
+      jest-util: 26.6.2
+      jest-validate: 26.6.2
+      jest-watcher: 26.6.2
+      micromatch: 4.0.5
+      p-each-series: 2.2.0
+      rimraf: 3.0.2
+      slash: 3.0.0
+      strip-ansi: 6.0.1
+    transitivePeerDependencies:
+      - bufferutil
+      - canvas
+      - metro
+      - supports-color
+      - ts-node
+      - utf-8-validate
+    dev: true
+
   /@jest/core/27.5.1_metro@0.67.0:
     resolution: {integrity: sha512-AK6/UTrvQD0Cd24NSqmIA6rKsu0tKIxfiCducZvqxYdmMisOYAsdItspT+fQDQYARPf8XgjAFZi0ogW2agH5nQ==}
     engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
@@ -9786,6 +9965,41 @@ packages:
       - supports-color
     dev: true
 
+  /@jest/reporters/26.6.2_metro@0.67.0:
+    resolution: {integrity: sha512-h2bW53APG4HvkOnVMo8q3QXa6pcaNt1HkwVsOPMBV6LD/q9oSpxNSYZQYkAnjdMjrJ86UuYeLo+aEZClV6opnw==}
+    engines: {node: '>= 10.14.2'}
+    dependencies:
+      '@bcoe/v8-coverage': 0.2.3
+      '@jest/console': 26.6.2
+      '@jest/test-result': 26.6.2
+      '@jest/transform': 26.6.2_metro@0.67.0
+      '@jest/types': 26.6.2
+      chalk: 4.1.2
+      collect-v8-coverage: 1.0.1
+      exit: 0.1.2
+      glob: 7.2.0
+      graceful-fs: 4.2.10
+      istanbul-lib-coverage: 3.2.0
+      istanbul-lib-instrument: 4.0.3
+      istanbul-lib-report: 3.0.0
+      istanbul-lib-source-maps: 4.0.1
+      istanbul-reports: 3.1.4
+      jest-haste-map: 26.6.2_metro@0.67.0
+      jest-resolve: 26.6.2
+      jest-util: 26.6.2
+      jest-worker: 26.6.2_metro@0.67.0
+      slash: 3.0.0
+      source-map: 0.6.1
+      string-length: 4.0.2
+      terminal-link: 2.1.1
+      v8-to-istanbul: 7.1.2
+    optionalDependencies:
+      node-notifier: 8.0.2
+    transitivePeerDependencies:
+      - metro
+      - supports-color
+    dev: true
+
   /@jest/reporters/27.5.1:
     resolution: {integrity: sha512-cPXh9hWIlVJMQkVk84aIvXuBB4uQQmFqZiacloFuGiP3ah1sbCxCosidXFDfqG8+6fO1oR2dTJTlsOy4VFmUfw==}
     engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
@@ -10054,6 +10268,24 @@ packages:
       jest-haste-map: 26.6.2
       jest-runner: 26.6.3
       jest-runtime: 26.6.3
+    transitivePeerDependencies:
+      - bufferutil
+      - canvas
+      - metro
+      - supports-color
+      - ts-node
+      - utf-8-validate
+    dev: true
+
+  /@jest/test-sequencer/26.6.3_metro@0.67.0:
+    resolution: {integrity: sha512-YHlVIjP5nfEyjlrSr8t/YdNfU/1XEt7c5b4OxcXCjyRhjzLYu/rO69/WHPuYcbCWkz8kAeZVZp2N2+IOLLEPGw==}
+    engines: {node: '>= 10.14.2'}
+    dependencies:
+      '@jest/test-result': 26.6.2
+      graceful-fs: 4.2.10
+      jest-haste-map: 26.6.2_metro@0.67.0
+      jest-runner: 26.6.3_metro@0.67.0
+      jest-runtime: 26.6.3_metro@0.67.0
     transitivePeerDependencies:
       - bufferutil
       - canvas
@@ -11871,7 +12103,6 @@ packages:
       - metro-transform-worker
       - supports-color
       - utf-8-validate
-    dev: false
 
   /@react-native-community/cli-server-api/5.0.1:
     resolution: {integrity: sha512-OOxL+y9AOZayQzmSW+h5T54wQe+QBc/f67Y9QlWzzJhkKJdYx+S4VOooHoD5PFJzGbYaxhu2YF17p517pcEIIA==}
@@ -12122,6 +12353,57 @@ packages:
       - utf-8-validate
     dev: true
 
+  /@react-native-community/cli/6.4.0_react-native@0.67.3:
+    resolution: {integrity: sha512-UNvYnWaALa4mJEaWdLY3fVK+csZzx/Ja/FGvXISPJ9W9lrKvGtyXkidViUCPbPtMsJUi7teA4uIShHn0mbGmnQ==}
+    engines: {node: '>=12'}
+    hasBin: true
+    peerDependencies:
+      metro-resolver: '*'
+      react-native: '*'
+    peerDependenciesMeta:
+      metro-resolver:
+        optional: true
+    dependencies:
+      '@react-native-community/cli-debugger-ui': 6.0.0
+      '@react-native-community/cli-hermes': 6.3.0
+      '@react-native-community/cli-plugin-metro': 6.4.0
+      '@react-native-community/cli-server-api': 6.4.3
+      '@react-native-community/cli-tools': 6.2.0
+      '@react-native-community/cli-types': 6.0.0
+      appdirsjs: 1.2.6
+      chalk: 4.1.2
+      command-exists: 1.2.9
+      commander: 2.20.3
+      cosmiconfig: 5.2.1
+      deepmerge: 3.3.0
+      envinfo: 7.8.1
+      execa: 1.0.0
+      find-up: 4.1.0
+      fs-extra: 8.1.0
+      glob: 7.2.3
+      graceful-fs: 4.2.10
+      joi: 17.6.0
+      leven: 3.1.0
+      lodash: 4.17.21
+      minimist: 1.2.6
+      node-stream-zip: 1.15.0
+      ora: 3.4.0
+      pretty-format: 26.6.2
+      prompts: 2.4.2
+      react-native: 0.67.3_react@17.0.2
+      semver: 6.3.0
+      serve-static: 1.15.0
+      strip-ansi: 5.2.0
+      sudo-prompt: 9.2.1
+      wcwidth: 1.0.1
+    transitivePeerDependencies:
+      - bufferutil
+      - encoding
+      - metro-transform-worker
+      - supports-color
+      - utf-8-validate
+    dev: true
+
   /@react-native-community/clipboard/1.5.1_jtrxi44z2zn3egoyupbz6wol6a:
     resolution: {integrity: sha512-AHAmrkLEH5UtPaDiRqoULERHh3oNv7Dgs0bTC0hO5Z2GdNokAMPT5w8ci8aMcRemcwbtdHjxChgtjbeA38GBdA==}
     peerDependencies:
@@ -12150,6 +12432,30 @@ packages:
       eslint-plugin-react: 7.29.4_eslint@7.32.0
       eslint-plugin-react-hooks: 4.5.0_eslint@7.32.0
       eslint-plugin-react-native: 3.11.0_eslint@7.32.0
+      prettier: 2.6.2
+    transitivePeerDependencies:
+      - jest
+      - supports-color
+      - typescript
+    dev: true
+
+  /@react-native-community/eslint-config/2.0.0_jest@26.6.3:
+    resolution: {integrity: sha512-vHaMMfvMp9BWCQQ0lNIXibOJTcXIbYUQ8dSUsMOsrXgVkeVQJj88OwrKS00rQyqwMaC4/a6HuDiFzYUkGKOpVg==}
+    peerDependencies:
+      eslint: '>=6'
+    dependencies:
+      '@react-native-community/eslint-plugin': 1.2.0
+      '@typescript-eslint/eslint-plugin': 3.10.1_5gv6dijzninihuqchwyp442sbi
+      '@typescript-eslint/parser': 3.10.1
+      babel-eslint: 10.1.0
+      eslint-config-prettier: 6.15.0
+      eslint-plugin-eslint-comments: 3.2.0
+      eslint-plugin-flowtype: 2.50.3
+      eslint-plugin-jest: 22.4.1_jest@26.6.3
+      eslint-plugin-prettier: 3.1.2_prettier@2.6.2
+      eslint-plugin-react: 7.29.4
+      eslint-plugin-react-hooks: 4.5.0
+      eslint-plugin-react-native: 3.11.0
       prettier: 2.6.2
     transitivePeerDependencies:
       - jest
@@ -12242,7 +12548,6 @@ packages:
 
   /@react-native/polyfills/2.0.0:
     resolution: {integrity: sha512-K0aGNn1TjalKj+65D7ycc1//H9roAQ51GJVk5ZJQFb2teECGmzd86bYDC0aYdbRf7gtovescq4Zt6FR0tgXiHQ==}
-    dev: false
 
   /@react-navigation/bottom-tabs/6.3.1_3ir5flukn2gbopzrcejcdoojj4:
     resolution: {integrity: sha512-sL9F4WMhhR6I9bE7bpsPVHnK1cN9doaFHAuy5YmD+Sw6OyO0TAmNgQFx4xZWqboA5ZwSkN0tWcRCr6wGXaRRag==}
@@ -17661,6 +17966,28 @@ packages:
       - supports-color
     dev: true
 
+  /@typescript-eslint/eslint-plugin/3.10.1_5gv6dijzninihuqchwyp442sbi:
+    resolution: {integrity: sha512-PQg0emRtzZFWq6PxBcdxRH3QIQiyFO3WCVpRL3fgj5oQS3CDs3AeAKfv4DxNhzn8ITdNJGJ4D3Qw8eAJf3lXeQ==}
+    engines: {node: ^10.12.0 || >=12.0.0}
+    peerDependencies:
+      '@typescript-eslint/parser': ^3.0.0
+      eslint: ^5.0.0 || ^6.0.0 || ^7.0.0
+      typescript: '*'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      '@typescript-eslint/experimental-utils': 3.10.1
+      '@typescript-eslint/parser': 3.10.1
+      debug: 4.3.4
+      functional-red-black-tree: 1.0.1
+      regexpp: 3.2.0
+      semver: 7.3.7
+      tsutils: 3.21.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
   /@typescript-eslint/eslint-plugin/4.33.0_lzzr7k3tjtqil7aczuhmzzwame:
     resolution: {integrity: sha512-aINiAxGVdOl1eJyVjaWn/YcVAq4Gi/Yo35qHGCnqbWVz61g39D0h23veY/MA0rFFGfxK7TySg2uwDeNv+JgVpg==}
     engines: {node: ^10.12.0 || >=12.0.0}
@@ -17808,6 +18135,22 @@ packages:
       - supports-color
       - typescript
 
+  /@typescript-eslint/experimental-utils/3.10.1:
+    resolution: {integrity: sha512-DewqIgscDzmAfd5nOGe4zm6Bl7PKtMG2Ad0KG8CUZAHlXfAKTF9Ol5PXhiMh39yRL2ChRH1cuuUGOcVyyrhQIw==}
+    engines: {node: ^10.12.0 || >=12.0.0}
+    peerDependencies:
+      eslint: '*'
+    dependencies:
+      '@types/json-schema': 7.0.11
+      '@typescript-eslint/types': 3.10.1
+      '@typescript-eslint/typescript-estree': 3.10.1
+      eslint-scope: 5.1.1
+      eslint-utils: 2.1.0
+    transitivePeerDependencies:
+      - supports-color
+      - typescript
+    dev: true
+
   /@typescript-eslint/experimental-utils/3.10.1_e4zyhrvfnqudwdx5bevnvkluy4:
     resolution: {integrity: sha512-DewqIgscDzmAfd5nOGe4zm6Bl7PKtMG2Ad0KG8CUZAHlXfAKTF9Ol5PXhiMh39yRL2ChRH1cuuUGOcVyyrhQIw==}
     engines: {node: ^10.12.0 || >=12.0.0}
@@ -17896,6 +18239,25 @@ packages:
       eslint-visitor-keys: 1.3.0
     transitivePeerDependencies:
       - supports-color
+
+  /@typescript-eslint/parser/3.10.1:
+    resolution: {integrity: sha512-Ug1RcWcrJP02hmtaXVS3axPPTTPnZjupqhgj+NnZ6BCkwSImWk/283347+x9wN+lqOdK9Eo3vsyiyDHgsmiEJw==}
+    engines: {node: ^10.12.0 || >=12.0.0}
+    peerDependencies:
+      eslint: ^5.0.0 || ^6.0.0 || ^7.0.0
+      typescript: '*'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      '@types/eslint-visitor-keys': 1.0.0
+      '@typescript-eslint/experimental-utils': 3.10.1
+      '@typescript-eslint/types': 3.10.1
+      '@typescript-eslint/typescript-estree': 3.10.1
+      eslint-visitor-keys: 1.3.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
 
   /@typescript-eslint/parser/3.10.1_e4zyhrvfnqudwdx5bevnvkluy4:
     resolution: {integrity: sha512-Ug1RcWcrJP02hmtaXVS3axPPTTPnZjupqhgj+NnZ6BCkwSImWk/283347+x9wN+lqOdK9Eo3vsyiyDHgsmiEJw==}
@@ -18118,6 +18480,27 @@ packages:
       tsutils: 3.21.0
     transitivePeerDependencies:
       - supports-color
+
+  /@typescript-eslint/typescript-estree/3.10.1:
+    resolution: {integrity: sha512-QbcXOuq6WYvnB3XPsZpIwztBoquEYLXh2MtwVU+kO8jgYCiv4G5xrSP/1wg4tkvrEE+esZVquIPX/dxPlePk1w==}
+    engines: {node: ^10.12.0 || >=12.0.0}
+    peerDependencies:
+      typescript: '*'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      '@typescript-eslint/types': 3.10.1
+      '@typescript-eslint/visitor-keys': 3.10.1
+      debug: 4.3.4
+      glob: 7.2.0
+      is-glob: 4.0.3
+      lodash: 4.17.21
+      semver: 7.3.7
+      tsutils: 3.21.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
 
   /@typescript-eslint/typescript-estree/3.10.1_typescript@4.6.4:
     resolution: {integrity: sha512-QbcXOuq6WYvnB3XPsZpIwztBoquEYLXh2MtwVU+kO8jgYCiv4G5xrSP/1wg4tkvrEE+esZVquIPX/dxPlePk1w==}
@@ -19903,6 +20286,23 @@ packages:
     dependencies:
       '@babel/core': 7.17.10
 
+  /babel-eslint/10.1.0:
+    resolution: {integrity: sha512-ifWaTHQ0ce+448CYop8AdrQiBsGrnC+bMgfyKFdi6EsPLTAWG+QfyDeM6OH+FmWnKvEq5NnBMLvlBUPKQZoDSg==}
+    engines: {node: '>=6'}
+    deprecated: babel-eslint is now @babel/eslint-parser. This package will no longer receive updates.
+    peerDependencies:
+      eslint: '>= 4.12.1'
+    dependencies:
+      '@babel/code-frame': 7.16.7
+      '@babel/parser': 7.17.10
+      '@babel/traverse': 7.17.10
+      '@babel/types': 7.17.10
+      eslint-visitor-keys: 1.3.0
+      resolve: 1.22.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
   /babel-eslint/10.1.0_eslint@6.8.0:
     resolution: {integrity: sha512-ifWaTHQ0ce+448CYop8AdrQiBsGrnC+bMgfyKFdi6EsPLTAWG+QfyDeM6OH+FmWnKvEq5NnBMLvlBUPKQZoDSg==}
     engines: {node: '>=6'}
@@ -20010,6 +20410,26 @@ packages:
     transitivePeerDependencies:
       - metro
       - supports-color
+
+  /babel-jest/26.6.3_257wgdvestm3ob2nxzik53knai:
+    resolution: {integrity: sha512-pl4Q+GAVOHwvjrck6jKjvmGhnO3jHX/xuB9d27f+EJZ/6k+6nMuPjorrYp7s++bKKdANwzElBWnLWaObvTnaZA==}
+    engines: {node: '>= 10.14.2'}
+    peerDependencies:
+      '@babel/core': ^7.0.0
+    dependencies:
+      '@babel/core': 7.18.5
+      '@jest/transform': 26.6.2_metro@0.67.0
+      '@jest/types': 26.6.2
+      '@types/babel__core': 7.1.19
+      babel-plugin-istanbul: 6.1.1
+      babel-preset-jest: 26.6.2_@babel+core@7.18.5
+      chalk: 4.1.2
+      graceful-fs: 4.2.10
+      slash: 3.0.0
+    transitivePeerDependencies:
+      - metro
+      - supports-color
+    dev: true
 
   /babel-jest/26.6.3_@babel+core@7.17.10:
     resolution: {integrity: sha512-pl4Q+GAVOHwvjrck6jKjvmGhnO3jHX/xuB9d27f+EJZ/6k+6nMuPjorrYp7s++bKKdANwzElBWnLWaObvTnaZA==}
@@ -20472,7 +20892,7 @@ packages:
       babel-plugin-syntax-jsx: 6.18.0
       lodash: 4.17.21
       picomatch: 2.3.1
-      styled-components: 5.3.5_fane7jikarojcev26y27hpbhu4
+      styled-components: 5.3.5_ovpqj5wn7dv5iunpkty63trwiy
 
   /babel-plugin-syntax-jsx/6.18.0:
     resolution: {integrity: sha512-qrPaCSo9c8RHNRHIotaufGbuOBN8rtdC4QrrFFc43vyWCCz7Kl7GL1PGaXtMGQZUXrkCjNEgxDfmAuAabr/rlw==}
@@ -20647,6 +21067,17 @@ packages:
       '@babel/core': 7.17.10
       babel-plugin-jest-hoist: 26.6.2
       babel-preset-current-node-syntax: 1.0.1_@babel+core@7.17.10
+    dev: true
+
+  /babel-preset-jest/26.6.2_@babel+core@7.18.5:
+    resolution: {integrity: sha512-YvdtlVm9t3k777c5NPQIv6cxFFFapys25HiUmuSgHwIZhfifweR5c5Sf5nwE3MAbfu327CYSvps8Yx6ANLyleQ==}
+    engines: {node: '>= 10.14.2'}
+    peerDependencies:
+      '@babel/core': ^7.0.0
+    dependencies:
+      '@babel/core': 7.18.5
+      babel-plugin-jest-hoist: 26.6.2
+      babel-preset-current-node-syntax: 1.0.1_@babel+core@7.18.5
     dev: true
 
   /babel-preset-jest/27.5.1_@babel+core@7.17.10:
@@ -25790,6 +26221,15 @@ packages:
       object.entries: 1.1.5
     dev: true
 
+  /eslint-config-prettier/6.15.0:
+    resolution: {integrity: sha512-a1+kOYLR8wMGustcgAjdydMsQ2A/2ipRPwRKUmfYaSxc9ZPcrku080Ctl6zrZzZNs/U82MjSv+qKREkoq3bJaw==}
+    hasBin: true
+    peerDependencies:
+      eslint: '>=3.14.1'
+    dependencies:
+      get-stdin: 6.0.0
+    dev: true
+
   /eslint-config-prettier/6.15.0_eslint@7.32.0:
     resolution: {integrity: sha512-a1+kOYLR8wMGustcgAjdydMsQ2A/2ipRPwRKUmfYaSxc9ZPcrku080Ctl6zrZzZNs/U82MjSv+qKREkoq3bJaw==}
     hasBin: true
@@ -26078,6 +26518,16 @@ packages:
       regexpp: 3.2.0
     dev: true
 
+  /eslint-plugin-eslint-comments/3.2.0:
+    resolution: {integrity: sha512-0jkOl0hfojIHHmEHgmNdqv4fmh7300NdpA9FFpF7zaoLvB/QeXOGNLIo86oAveJFrfB1p05kC8hpEMHM8DwWVQ==}
+    engines: {node: '>=6.5.0'}
+    peerDependencies:
+      eslint: '>=4.19.1'
+    dependencies:
+      escape-string-regexp: 1.0.5
+      ignore: 5.2.0
+    dev: true
+
   /eslint-plugin-eslint-comments/3.2.0_eslint@7.32.0:
     resolution: {integrity: sha512-0jkOl0hfojIHHmEHgmNdqv4fmh7300NdpA9FFpF7zaoLvB/QeXOGNLIo86oAveJFrfB1p05kC8hpEMHM8DwWVQ==}
     engines: {node: '>=6.5.0'}
@@ -26098,6 +26548,15 @@ packages:
       escape-string-regexp: 1.0.5
       eslint: 8.15.0
       ignore: 5.2.0
+    dev: true
+
+  /eslint-plugin-flowtype/2.50.3:
+    resolution: {integrity: sha512-X+AoKVOr7Re0ko/yEXyM5SSZ0tazc6ffdIOocp2fFUlWoDt7DV0Bz99mngOkAFLOAWjqRA5jPwqUCbrx13XoxQ==}
+    engines: {node: '>=4'}
+    peerDependencies:
+      eslint: '>=2.0.0'
+    dependencies:
+      lodash: 4.17.21
     dev: true
 
   /eslint-plugin-flowtype/2.50.3_eslint@7.32.0:
@@ -26287,6 +26746,19 @@ packages:
       eslint: 8.15.0
     dev: true
 
+  /eslint-plugin-jest/22.4.1_jest@26.6.3:
+    resolution: {integrity: sha512-gcLfn6P2PrFAVx3AobaOzlIEevpAEf9chTpFZz7bYfc7pz8XRv7vuKTIE4hxPKZSha6XWKKplDQ0x9Pq8xX2mg==}
+    engines: {node: '>=6'}
+    peerDependencies:
+      eslint: '>=5'
+      jest: '*'
+    peerDependenciesMeta:
+      jest:
+        optional: true
+    dependencies:
+      jest: 26.6.3_metro@0.67.0
+    dev: true
+
   /eslint-plugin-jest/24.7.0_32lrsqllp3phofmahswdvcppbm:
     resolution: {integrity: sha512-wUxdF2bAZiYSKBclsUMrYHH6WxiBreNjyDxbRv345TIvPeoCEgPNEn3Sa+ZrSqsf1Dl9SqqSREXMHExlMMu1DA==}
     engines: {node: '>=10'}
@@ -26410,6 +26882,17 @@ packages:
       prettier-linter-helpers: 1.0.0
     dev: true
 
+  /eslint-plugin-prettier/3.1.2_prettier@2.6.2:
+    resolution: {integrity: sha512-GlolCC9y3XZfv3RQfwGew7NnuFDKsfI4lbvRK+PIIo23SFH+LemGs4cKwzAaRa+Mdb+lQO/STaIayno8T5sJJA==}
+    engines: {node: '>=6.0.0'}
+    peerDependencies:
+      eslint: '>= 5.0.0'
+      prettier: '>= 1.13.0'
+    dependencies:
+      prettier: 2.6.2
+      prettier-linter-helpers: 1.0.0
+    dev: true
+
   /eslint-plugin-prettier/3.4.1_24nbwbg7kfd7ynd7y3crveli54:
     resolution: {integrity: sha512-htg25EUYUeIhKHXjOinK4BgCcDwtLHjqaxCDsMy5nbnUMkKFvIhMVCp+5GFUXQ4Nr8lBsPqtGAqBenbpFqAA2g==}
     engines: {node: '>=6.0.0'}
@@ -26529,6 +27012,13 @@ packages:
     dependencies:
       eslint: 6.8.0
 
+  /eslint-plugin-react-hooks/4.5.0:
+    resolution: {integrity: sha512-8k1gRt7D7h03kd+SAAlzXkQwWK22BnK6GKZG+FJA6BAGy22CFvl8kCIXKpVux0cCxMWDQUPqSok0LKaZ0aOcCw==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0
+    dev: true
+
   /eslint-plugin-react-hooks/4.5.0_eslint@7.32.0:
     resolution: {integrity: sha512-8k1gRt7D7h03kd+SAAlzXkQwWK22BnK6GKZG+FJA6BAGy22CFvl8kCIXKpVux0cCxMWDQUPqSok0LKaZ0aOcCw==}
     engines: {node: '>=10'}
@@ -26558,6 +27048,17 @@ packages:
 
   /eslint-plugin-react-native-globals/0.1.2:
     resolution: {integrity: sha512-9aEPf1JEpiTjcFAmmyw8eiIXmcNZOqaZyHO77wgm0/dWfT/oxC1SrIq8ET38pMxHYrcB6Uew+TzUVsBeczF88g==}
+    dev: true
+
+  /eslint-plugin-react-native/3.11.0:
+    resolution: {integrity: sha512-7F3OTwrtQPfPFd+VygqKA2VZ0f2fz0M4gJmry/TRE18JBb94/OtMxwbL7Oqwu7FGyrdeIOWnXQbBAveMcSTZIA==}
+    peerDependencies:
+      eslint: ^3.17.0 || ^4 || ^5 || ^6 || ^7
+    dependencies:
+      '@babel/traverse': 7.17.10
+      eslint-plugin-react-native-globals: 0.1.2
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /eslint-plugin-react-native/3.11.0_eslint@7.32.0:
@@ -26603,6 +27104,28 @@ packages:
       semver: 6.3.0
       string.prototype.matchall: 4.0.7
       xregexp: 4.4.1
+
+  /eslint-plugin-react/7.29.4:
+    resolution: {integrity: sha512-CVCXajliVh509PcZYRFyu/BoUEz452+jtQJq2b3Bae4v3xBUWPLCmtmBM+ZinG4MzwmxJgJ2M5rMqhqLVn7MtQ==}
+    engines: {node: '>=4'}
+    peerDependencies:
+      eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8
+    dependencies:
+      array-includes: 3.1.5
+      array.prototype.flatmap: 1.3.0
+      doctrine: 2.1.0
+      estraverse: 5.3.0
+      jsx-ast-utils: 3.3.0
+      minimatch: 3.1.2
+      object.entries: 1.1.5
+      object.fromentries: 2.0.5
+      object.hasown: 1.1.1
+      object.values: 1.1.5
+      prop-types: 15.8.1
+      resolve: 2.0.0-next.3
+      semver: 6.3.0
+      string.prototype.matchall: 4.0.7
+    dev: true
 
   /eslint-plugin-react/7.29.4_eslint@7.32.0:
     resolution: {integrity: sha512-CVCXajliVh509PcZYRFyu/BoUEz452+jtQJq2b3Bae4v3xBUWPLCmtmBM+ZinG4MzwmxJgJ2M5rMqhqLVn7MtQ==}
@@ -28460,6 +28983,10 @@ packages:
       pkg-dir: 4.2.0
     dev: true
 
+  /findit/2.0.0:
+    resolution: {integrity: sha512-ENZS237/Hr8bjczn5eKuBohLgaD0JyUd0arxretR1f9RO46vZHA1b2y0VorgGV3WaOT3c+78P8h7v4JGJ1i/rg==}
+    dev: false
+
   /firebase/9.8.1:
     resolution: {integrity: sha512-VyM+3ijzB1Q24b9v6HzVOB0bXNy0a/maOZlmv2P8M29VXfrS/npo6zntNiOEtcjrCoItZIuWFH4oDGiYkPHxbg==}
     dependencies:
@@ -29018,6 +29545,14 @@ packages:
 
   /fs-constants/1.0.0:
     resolution: {integrity: sha512-y6OAwoSIf7FyjMIv94u+b5rdheZEjzR63GTyZJm5qh4Bi+2YgwLCcI/fPFZkL5PSixOt6ZNKm+w+Hfp/Bciwow==}
+
+  /fs-extra/0.22.1:
+    resolution: {integrity: sha512-M7CuxS2f9k/5il8ufmLiCtT7B2O2JLoTZi83ZtyEJMG67cTn87fNULYWtno5Vm31TxmSRE0nkA9GxaRR+y3XTA==}
+    dependencies:
+      graceful-fs: 4.2.10
+      jsonfile: 2.4.0
+      rimraf: 2.7.1
+    dev: false
 
   /fs-extra/0.30.0:
     resolution: {integrity: sha1-8jP/zAjU2n1DLapEl3aYnbHfk/A=}
@@ -30094,7 +30629,6 @@ packages:
 
   /hermes-engine/0.9.0:
     resolution: {integrity: sha512-r7U+Y4P2Qg/igFVZN+DpT7JFfXUn1MM4dFne8aW+cCrF6RRymof+VqrUHs1kl07j8h8V2CNesU19RKgWbr3qPw==}
-    dev: false
 
   /hermes-estree/0.5.0:
     resolution: {integrity: sha512-1h8rvG23HhIR5K6Kt0e5C7BC72J1Ath/8MmSta49vxXp/j6wl7IMHvIRFYBQr35tWnQY97dSGR2uoAJ5pHUQkg==}
@@ -31955,6 +32489,33 @@ packages:
       - utf-8-validate
     dev: true
 
+  /jest-cli/26.6.3_metro@0.67.0:
+    resolution: {integrity: sha512-GF9noBSa9t08pSyl3CY4frMrqp+aQXFGFkf5hEPbh/pIUFYWMK6ZLTfbmadxJVcJrdRoChlWQsA2VkJcDFK8hg==}
+    engines: {node: '>= 10.14.2'}
+    hasBin: true
+    dependencies:
+      '@jest/core': 26.6.3_metro@0.67.0
+      '@jest/test-result': 26.6.2
+      '@jest/types': 26.6.2
+      chalk: 4.1.2
+      exit: 0.1.2
+      graceful-fs: 4.2.10
+      import-local: 3.1.0
+      is-ci: 2.0.0
+      jest-config: 26.6.3_metro@0.67.0
+      jest-util: 26.6.2
+      jest-validate: 26.6.2
+      prompts: 2.4.2
+      yargs: 15.4.1
+    transitivePeerDependencies:
+      - bufferutil
+      - canvas
+      - metro
+      - supports-color
+      - ts-node
+      - utf-8-validate
+    dev: true
+
   /jest-cli/27.5.1_metro@0.67.0:
     resolution: {integrity: sha512-Hc6HOOwYq4/74/c62dEE3r5elx8wjYqxY0r0G/nFrLDPMFRu6RA/u8qINOIkvhxG7mMQ5EJsOGfRpI8L6eFUVw==}
     engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
@@ -32123,6 +32684,41 @@ packages:
       jest-environment-node: 26.6.2
       jest-get-type: 26.3.0
       jest-jasmine2: 26.6.3
+      jest-regex-util: 26.0.0
+      jest-resolve: 26.6.2
+      jest-util: 26.6.2
+      jest-validate: 26.6.2
+      micromatch: 4.0.5
+      pretty-format: 26.6.2
+    transitivePeerDependencies:
+      - bufferutil
+      - canvas
+      - metro
+      - supports-color
+      - utf-8-validate
+    dev: true
+
+  /jest-config/26.6.3_metro@0.67.0:
+    resolution: {integrity: sha512-t5qdIj/bCj2j7NFVHb2nFB4aUdfucDn3JRKgrZnplb8nieAirAzRSHP8uDEd+qV6ygzg9Pz4YG7UTJf94LPSyg==}
+    engines: {node: '>= 10.14.2'}
+    peerDependencies:
+      ts-node: '>=9.0.0'
+    peerDependenciesMeta:
+      ts-node:
+        optional: true
+    dependencies:
+      '@babel/core': 7.17.10
+      '@jest/test-sequencer': 26.6.3_metro@0.67.0
+      '@jest/types': 26.6.2
+      babel-jest: 26.6.3_epmq4ny5eiwbyxkub5iqcapase
+      chalk: 4.1.2
+      deepmerge: 4.2.2
+      glob: 7.2.0
+      graceful-fs: 4.2.10
+      jest-environment-jsdom: 26.6.2
+      jest-environment-node: 26.6.2
+      jest-get-type: 26.3.0
+      jest-jasmine2: 26.6.3_metro@0.67.0
       jest-regex-util: 26.0.0
       jest-resolve: 26.6.2
       jest-util: 26.6.2
@@ -32882,6 +33478,37 @@ packages:
       - utf-8-validate
     dev: true
 
+  /jest-jasmine2/26.6.3_metro@0.67.0:
+    resolution: {integrity: sha512-kPKUrQtc8aYwBV7CqBg5pu+tmYXlvFlSFYn18ev4gPFtrRzB15N2gW/Roew3187q2w2eHuu0MU9TJz6w0/nPEg==}
+    engines: {node: '>= 10.14.2'}
+    dependencies:
+      '@babel/traverse': 7.17.10
+      '@jest/environment': 26.6.2
+      '@jest/source-map': 26.6.2
+      '@jest/test-result': 26.6.2
+      '@jest/types': 26.6.2
+      '@types/node': 17.0.32
+      chalk: 4.1.2
+      co: 4.6.0
+      expect: 26.6.2
+      is-generator-fn: 2.1.0
+      jest-each: 26.6.2
+      jest-matcher-utils: 26.6.2
+      jest-message-util: 26.6.2
+      jest-runtime: 26.6.3_metro@0.67.0
+      jest-snapshot: 26.6.2_metro@0.67.0
+      jest-util: 26.6.2
+      pretty-format: 26.6.2
+      throat: 5.0.0
+    transitivePeerDependencies:
+      - bufferutil
+      - canvas
+      - metro
+      - supports-color
+      - ts-node
+      - utf-8-validate
+    dev: true
+
   /jest-jasmine2/27.5.1:
     resolution: {integrity: sha512-jtq7VVyG8SqAorDpApwiJJImd0V2wv1xzdheGHRGyuT7gZm6gG47QEskOlzsN1PG/6WNaCo5pmwMHDf3AkG2pQ==}
     engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
@@ -33175,7 +33802,7 @@ packages:
       jest-resolve:
         optional: true
     dependencies:
-      jest-resolve: 27.5.1
+      jest-resolve: 27.5.1_metro@0.67.0
     dev: true
 
   /jest-pnp-resolver/1.2.2_jest-resolve@28.1.0:
@@ -33237,6 +33864,18 @@ packages:
       '@jest/types': 26.6.2
       jest-regex-util: 26.0.0
       jest-snapshot: 26.6.2
+    transitivePeerDependencies:
+      - metro
+      - supports-color
+    dev: true
+
+  /jest-resolve-dependencies/26.6.3_metro@0.67.0:
+    resolution: {integrity: sha512-pVwUjJkxbhe4RY8QEWzN3vns2kqyuldKpxlxJlzEYfKSvY6/bMvxoFrYYzUO1Gx28yKWN37qyV7rIoIp2h8fTg==}
+    engines: {node: '>= 10.14.2'}
+    dependencies:
+      '@jest/types': 26.6.2
+      jest-regex-util: 26.0.0
+      jest-snapshot: 26.6.2_metro@0.67.0
     transitivePeerDependencies:
       - metro
       - supports-color
@@ -33433,6 +34072,39 @@ packages:
       jest-runtime: 26.6.3
       jest-util: 26.6.2
       jest-worker: 26.6.2
+      source-map-support: 0.5.21
+      throat: 5.0.0
+    transitivePeerDependencies:
+      - bufferutil
+      - canvas
+      - metro
+      - supports-color
+      - ts-node
+      - utf-8-validate
+    dev: true
+
+  /jest-runner/26.6.3_metro@0.67.0:
+    resolution: {integrity: sha512-atgKpRHnaA2OvByG/HpGA4g6CSPS/1LK0jK3gATJAoptC1ojltpmVlYC3TYgdmGp+GLuhzpH30Gvs36szSL2JQ==}
+    engines: {node: '>= 10.14.2'}
+    dependencies:
+      '@jest/console': 26.6.2
+      '@jest/environment': 26.6.2
+      '@jest/test-result': 26.6.2
+      '@jest/types': 26.6.2
+      '@types/node': 17.0.32
+      chalk: 4.1.2
+      emittery: 0.7.2
+      exit: 0.1.2
+      graceful-fs: 4.2.10
+      jest-config: 26.6.3_metro@0.67.0
+      jest-docblock: 26.0.0
+      jest-haste-map: 26.6.2_metro@0.67.0
+      jest-leak-detector: 26.6.2
+      jest-message-util: 26.6.2
+      jest-resolve: 26.6.2
+      jest-runtime: 26.6.3_metro@0.67.0
+      jest-util: 26.6.2
+      jest-worker: 26.6.2_metro@0.67.0
       source-map-support: 0.5.21
       throat: 5.0.0
     transitivePeerDependencies:
@@ -33645,6 +34317,47 @@ packages:
       - utf-8-validate
     dev: true
 
+  /jest-runtime/26.6.3_metro@0.67.0:
+    resolution: {integrity: sha512-lrzyR3N8sacTAMeonbqpnSka1dHNux2uk0qqDXVkMv2c/A3wYnvQ4EXuI013Y6+gSKSCxdaczvf4HF0mVXHRdw==}
+    engines: {node: '>= 10.14.2'}
+    hasBin: true
+    dependencies:
+      '@jest/console': 26.6.2
+      '@jest/environment': 26.6.2
+      '@jest/fake-timers': 26.6.2
+      '@jest/globals': 26.6.2
+      '@jest/source-map': 26.6.2
+      '@jest/test-result': 26.6.2
+      '@jest/transform': 26.6.2_metro@0.67.0
+      '@jest/types': 26.6.2
+      '@types/yargs': 15.0.14
+      chalk: 4.1.2
+      cjs-module-lexer: 0.6.0
+      collect-v8-coverage: 1.0.1
+      exit: 0.1.2
+      glob: 7.2.0
+      graceful-fs: 4.2.10
+      jest-config: 26.6.3_metro@0.67.0
+      jest-haste-map: 26.6.2_metro@0.67.0
+      jest-message-util: 26.6.2
+      jest-mock: 26.6.2
+      jest-regex-util: 26.0.0
+      jest-resolve: 26.6.2
+      jest-snapshot: 26.6.2_metro@0.67.0
+      jest-util: 26.6.2
+      jest-validate: 26.6.2
+      slash: 3.0.0
+      strip-bom: 4.0.0
+      yargs: 15.4.1
+    transitivePeerDependencies:
+      - bufferutil
+      - canvas
+      - metro
+      - supports-color
+      - ts-node
+      - utf-8-validate
+    dev: true
+
   /jest-runtime/27.5.1:
     resolution: {integrity: sha512-o7gxw3Gf+H2IGt8fv0RiyE1+r83FJBRruoA+FXrlHw6xEyBsU8ugA6IPfTdVyA0w8HClpbK+DGJxH59UrNMx8A==}
     engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
@@ -33822,6 +34535,31 @@ packages:
       jest-diff: 26.6.2
       jest-get-type: 26.3.0
       jest-haste-map: 26.6.2
+      jest-matcher-utils: 26.6.2
+      jest-message-util: 26.6.2
+      jest-resolve: 26.6.2
+      natural-compare: 1.4.0
+      pretty-format: 26.6.2
+      semver: 7.3.7
+    transitivePeerDependencies:
+      - metro
+      - supports-color
+    dev: true
+
+  /jest-snapshot/26.6.2_metro@0.67.0:
+    resolution: {integrity: sha512-OLhxz05EzUtsAmOMzuupt1lHYXCNib0ECyuZ/PZOx9TrZcC8vL0x+DUG3TL+GLX3yHG45e6YGjIm0XwDc3q3og==}
+    engines: {node: '>= 10.14.2'}
+    dependencies:
+      '@babel/types': 7.17.10
+      '@jest/types': 26.6.2
+      '@types/babel__traverse': 7.17.1
+      '@types/prettier': 2.6.0
+      chalk: 4.1.2
+      expect: 26.6.2
+      graceful-fs: 4.2.10
+      jest-diff: 26.6.2
+      jest-get-type: 26.3.0
+      jest-haste-map: 26.6.2_metro@0.67.0
       jest-matcher-utils: 26.6.2
       jest-message-util: 26.6.2
       jest-resolve: 26.6.2
@@ -34302,6 +35040,23 @@ packages:
       - utf-8-validate
     dev: true
 
+  /jest/26.6.3_metro@0.67.0:
+    resolution: {integrity: sha512-lGS5PXGAzR4RF7V5+XObhqz2KZIDUA1yD0DG6pBVmy10eh0ZIXQImRuzocsI/N2XZ1GrLFwTS27In2i2jlpq1Q==}
+    engines: {node: '>= 10.14.2'}
+    hasBin: true
+    dependencies:
+      '@jest/core': 26.6.3_metro@0.67.0
+      import-local: 3.1.0
+      jest-cli: 26.6.3_metro@0.67.0
+    transitivePeerDependencies:
+      - bufferutil
+      - canvas
+      - metro
+      - supports-color
+      - ts-node
+      - utf-8-validate
+    dev: true
+
   /jest/27.5.1_metro@0.67.0:
     resolution: {integrity: sha512-Yn0mADZB89zTtjkPJEXwrac3LHudkQMR+Paqa8uxJHCBr9agxztUifWCyiYrjhMPBoUVBjyny0I7XH6ozDr7QQ==}
     engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
@@ -34529,7 +35284,6 @@ packages:
       write-file-atomic: 2.4.3
     transitivePeerDependencies:
       - supports-color
-    dev: false
 
   /jscodeshift/0.11.0_@babel+preset-env@7.17.10:
     resolution: {integrity: sha512-SdRK2C7jjs4k/kT2mwtO07KJN9RnjxtKn03d9JVj6c3j9WwaLcFYsICYDnLAzY0hp+wG2nxl+Cm2jWLiNVYb8g==}
@@ -36612,24 +37366,6 @@ packages:
       - supports-color
       - utf-8-validate
 
-  /metro-config/0.67.0_5rj3ktdhebdtkdjqejo5rbxriu:
-    resolution: {integrity: sha512-ThAwUmzZwTbKyyrIn2bKIcJDPDBS0LKAbqJZQioflvBGfcgA21h3fdL3IxRmvCEl6OnkEWI0Tn1Z9w2GLAjf2g==}
-    peerDependencies:
-      metro-transform-worker: '*'
-    peerDependenciesMeta:
-      metro-transform-worker:
-        optional: true
-    dependencies:
-      cosmiconfig: 5.2.1
-      jest-validate: 26.6.2
-      metro: 0.67.0
-      metro-cache: 0.67.0_metro@0.67.0
-      metro-core: 0.67.0_metro@0.67.0
-      metro-runtime: 0.67.0
-      metro-transform-worker: 0.67.0_metro-minify-uglify@0.67.0
-    transitivePeerDependencies:
-      - metro
-
   /metro-config/0.67.0_h77kaxayu5kga6qsud7rauzt6a:
     resolution: {integrity: sha512-ThAwUmzZwTbKyyrIn2bKIcJDPDBS0LKAbqJZQioflvBGfcgA21h3fdL3IxRmvCEl6OnkEWI0Tn1Z9w2GLAjf2g==}
     peerDependencies:
@@ -36901,7 +37637,7 @@ packages:
       '@babel/parser': 7.18.5
       '@babel/types': 7.18.4
       babel-preset-fbjs: 3.4.0_@babel+core@7.18.5
-      metro: 0.67.0_h77kaxayu5kga6qsud7rauzt6a
+      metro: 0.67.0
       metro-babel-transformer: 0.67.0
       metro-cache: 0.67.0_metro@0.67.0
       metro-cache-key: 0.67.0
@@ -36974,68 +37710,6 @@ packages:
     transitivePeerDependencies:
       - bufferutil
       - encoding
-      - supports-color
-      - utf-8-validate
-
-  /metro/0.67.0_h77kaxayu5kga6qsud7rauzt6a:
-    resolution: {integrity: sha512-DwuBGAFcAivoac/swz8Lp7Y5Bcge1tzT7T6K0nf1ubqJP8YzBUtyR4pkjEYVUzVu/NZf7O54kHSPVu1ibYzOBQ==}
-    hasBin: true
-    dependencies:
-      '@babel/code-frame': 7.16.7
-      '@babel/core': 7.18.5
-      '@babel/generator': 7.18.2
-      '@babel/parser': 7.18.5
-      '@babel/template': 7.16.7
-      '@babel/traverse': 7.18.5
-      '@babel/types': 7.18.4
-      absolute-path: 0.0.0
-      accepts: 1.3.8
-      async: 2.6.4
-      chalk: 4.1.2
-      ci-info: 2.0.0
-      connect: 3.7.0
-      debug: 2.6.9
-      denodeify: 1.2.1
-      error-stack-parser: 2.0.7
-      fs-extra: 1.0.0
-      graceful-fs: 4.2.10
-      hermes-parser: 0.5.0
-      image-size: 0.6.3
-      invariant: 2.2.4
-      jest-haste-map: 27.5.1_metro@0.67.0
-      jest-worker: 26.6.2_metro@0.67.0
-      lodash.throttle: 4.1.1
-      metro-babel-transformer: 0.67.0
-      metro-cache: 0.67.0_metro@0.67.0
-      metro-cache-key: 0.67.0
-      metro-config: 0.67.0_5rj3ktdhebdtkdjqejo5rbxriu
-      metro-core: 0.67.0_metro@0.67.0
-      metro-hermes-compiler: 0.67.0
-      metro-inspector-proxy: 0.67.0
-      metro-minify-uglify: 0.67.0
-      metro-react-native-babel-preset: 0.67.0
-      metro-resolver: 0.67.0
-      metro-runtime: 0.67.0
-      metro-source-map: 0.67.0
-      metro-symbolicate: 0.67.0
-      metro-transform-plugins: 0.67.0
-      metro-transform-worker: 0.67.0_metro-minify-uglify@0.67.0
-      mime-types: 2.1.35
-      mkdirp: 0.5.6
-      node-fetch: 2.6.7
-      nullthrows: 1.1.1
-      rimraf: 2.7.1
-      serialize-error: 2.1.0
-      source-map: 0.5.7
-      strip-ansi: 6.0.1
-      temp: 0.8.3
-      throat: 5.0.0
-      ws: 7.5.7
-      yargs: 15.4.1
-    transitivePeerDependencies:
-      - bufferutil
-      - encoding
-      - metro-transform-worker
       - supports-color
       - utf-8-validate
 
@@ -38265,7 +38939,7 @@ packages:
     dev: true
 
   /object.pick/1.3.0:
-    resolution: {integrity: sha1-h6EKxMFpS9Lhy/U1kaZhQftd10c=}
+    resolution: {integrity: sha512-tqa/UMy/CCoYmj+H5qc07qvSL9dqcs/WZENZ1JbtWBlATP+iVOe778gE6MSijnyCnORzDuX6hU+LA4SZ09YjFQ==}
     engines: {node: '>=0.10.0'}
     dependencies:
       isobject: 3.0.1
@@ -38442,7 +39116,7 @@ packages:
       word-wrap: 1.2.3
 
   /options/0.0.6:
-    resolution: {integrity: sha1-7CLTEoBrtT5zF3Pnza788cZDEo8=}
+    resolution: {integrity: sha512-bOj3L1ypm++N+n7CEbbe473A414AB7z+amKYshRb//iuL3MpdDCLhPnw6aVTdKB9g5ZRVHIEp8eUln6L2NUStg==}
     engines: {node: '>=0.4.0'}
 
   /ora/3.4.0:
@@ -40869,7 +41543,6 @@ packages:
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
-    dev: false
 
   /react-devtools-core/4.24.5:
     resolution: {integrity: sha512-zr1LbHB5N5XjSNSCbxbfDNW8vryQdt2zYs8qnk5YacvFcwrMXGGXYoQ4gdu0rKe4mB/5MQYwgFse6IlyQiZwVw==}
@@ -41171,7 +41844,6 @@ packages:
     transitivePeerDependencies:
       - '@babel/preset-env'
       - supports-color
-    dev: false
 
   /react-native-config/1.4.4:
     resolution: {integrity: sha512-bu47sJHn/HrB7COAWBI8DieAhrbFLINHFE2HBCcVkDu0Y5ScrMs6vL+jhIm+pMSgxouseLhXG8h7xYYpxE38PA==}
@@ -41704,6 +42376,7 @@ packages:
       '@react-native-community/cli': 5.0.1_z4n5w54xe2k4pdo75pcwupztiu
       '@react-native-community/cli-platform-android': 5.0.1
       '@react-native-community/cli-platform-ios': 5.0.2
+      '@react-native-community/cli-plugin-metro': 6.4.0_h77kaxayu5kga6qsud7rauzt6a
       '@react-native/assets': 1.0.0
       '@react-native/normalize-color': 1.0.0
       '@react-native/polyfills': 1.0.0
@@ -41734,6 +42407,7 @@ packages:
       use-subscription: 1.7.0_react@17.0.2
       whatwg-fetch: 3.6.2
       ws: 6.2.2
+      yargs: 17.5.1
     transitivePeerDependencies:
       - '@babel/preset-env'
       - bufferutil
@@ -41753,6 +42427,7 @@ packages:
       '@react-native-community/cli': 6.4.0_react-native@0.65.1
       '@react-native-community/cli-platform-android': 6.3.0
       '@react-native-community/cli-platform-ios': 6.2.0
+      '@react-native-community/cli-plugin-metro': 6.4.0
       '@react-native/assets': 1.0.0
       '@react-native/normalize-color': 1.0.0
       '@react-native/polyfills': 1.0.0
@@ -41781,6 +42456,7 @@ packages:
       use-subscription: 1.7.0_react@17.0.2
       whatwg-fetch: 3.6.2
       ws: 6.2.2
+      yargs: 17.5.1
     transitivePeerDependencies:
       - bufferutil
       - encoding
@@ -41790,7 +42466,7 @@ packages:
       - utf-8-validate
     dev: true
 
-  /react-native/0.67.3_shn3lkepuadv4od4dudas6ijbq:
+  /react-native/0.67.3_react@17.0.2:
     resolution: {integrity: sha512-epMVRMRH7dLCis97+YwiV4dmTVZO6qKmQgwcTNcxVt/kEMxAa+OYK7h81+99/n7XCeMFk/U2zYOBuQqc7c5Amg==}
     engines: {node: '>=12'}
     hasBin: true
@@ -41798,9 +42474,10 @@ packages:
       react: 17.0.2
     dependencies:
       '@jest/create-cache-key-function': 27.5.1
-      '@react-native-community/cli': 6.4.0_fazqo4unimqmfwpywzaiilj7ba
+      '@react-native-community/cli': 6.4.0_react-native@0.67.3
       '@react-native-community/cli-platform-android': 6.3.0
       '@react-native-community/cli-platform-ios': 6.2.0
+      '@react-native-community/cli-plugin-metro': 6.4.0
       '@react-native/assets': 1.0.0
       '@react-native/normalize-color': 2.0.0
       '@react-native/polyfills': 2.0.0
@@ -41829,6 +42506,58 @@ packages:
       use-subscription: 1.7.0_react@17.0.2
       whatwg-fetch: 3.6.2
       ws: 6.2.2
+      yargs: 17.5.1
+    transitivePeerDependencies:
+      - '@babel/preset-env'
+      - bufferutil
+      - encoding
+      - metro-resolver
+      - metro-transform-worker
+      - supports-color
+      - utf-8-validate
+    dev: true
+
+  /react-native/0.67.3_shn3lkepuadv4od4dudas6ijbq:
+    resolution: {integrity: sha512-epMVRMRH7dLCis97+YwiV4dmTVZO6qKmQgwcTNcxVt/kEMxAa+OYK7h81+99/n7XCeMFk/U2zYOBuQqc7c5Amg==}
+    engines: {node: '>=12'}
+    hasBin: true
+    peerDependencies:
+      react: 17.0.2
+    dependencies:
+      '@jest/create-cache-key-function': 27.5.1
+      '@react-native-community/cli': 6.4.0_fazqo4unimqmfwpywzaiilj7ba
+      '@react-native-community/cli-platform-android': 6.3.0
+      '@react-native-community/cli-platform-ios': 6.2.0
+      '@react-native-community/cli-plugin-metro': 6.4.0_h77kaxayu5kga6qsud7rauzt6a
+      '@react-native/assets': 1.0.0
+      '@react-native/normalize-color': 2.0.0
+      '@react-native/polyfills': 2.0.0
+      abort-controller: 3.0.0
+      anser: 1.4.10
+      base64-js: 1.5.1
+      event-target-shim: 5.0.1
+      hermes-engine: 0.9.0
+      invariant: 2.2.4
+      jsc-android: 250230.2.1
+      metro-react-native-babel-transformer: 0.67.0
+      metro-runtime: 0.67.0
+      metro-source-map: 0.66.2
+      mkdirp: 1.0.4
+      nullthrows: 1.1.1
+      pretty-format: 26.6.2
+      promise: 8.1.0
+      prop-types: 15.8.1
+      react: 17.0.2
+      react-devtools-core: 4.19.1
+      react-native-codegen: 0.0.8
+      react-refresh: 0.4.3
+      regenerator-runtime: 0.13.9
+      scheduler: 0.20.2
+      stacktrace-parser: 0.1.10
+      use-subscription: 1.7.0_react@17.0.2
+      whatwg-fetch: 3.6.2
+      ws: 6.2.2
+      yargs: 17.5.1
     transitivePeerDependencies:
       - '@babel/preset-env'
       - bufferutil
@@ -42479,7 +43208,7 @@ packages:
       picomatch: 2.3.1
 
   /readline/1.3.0:
-    resolution: {integrity: sha1-xYDXfvLPyHUrEySYBg3JeTp6wBw=}
+    resolution: {integrity: sha512-k2d6ACCkiNYz222Fs/iNze30rRJ1iIicW7JuX/7/cozvih6YCkFZH+J6mAFDVgv0dRBaAyr4jDqC95R2y4IADg==}
 
   /readonly-date/1.0.0:
     resolution: {integrity: sha512-tMKIV7hlk0h4mO3JTmmVuIlJVXjKk3Sep9Bf5OH0O+758ruuVkUy2J9SttDLm91IEX/WHlXPSpxMGjPj4beMIQ==}
@@ -43239,6 +43968,21 @@ packages:
   /rlp/3.0.0:
     resolution: {integrity: sha512-PD6U2PGk6Vq2spfgiWZdomLvRGDreBLxi5jv5M8EpRo3pU6VEm31KO+HFxE18Q3vgqfDrQ9pZA3FP95rkijNKw==}
     hasBin: true
+    dev: false
+
+  /rn-nodeify/10.3.0:
+    resolution: {integrity: sha512-EZB3M4M5i8yySCWF7AAZ31xU7cpdLuIKMlVxXji9t0aY8Ojy3BAyRt1sTp0OwBgy1ejShmlIu2L4f8mToJ+uvg==}
+    hasBin: true
+    dependencies:
+      '@yarnpkg/lockfile': 1.1.0
+      deep-equal: 1.1.1
+      findit: 2.0.0
+      fs-extra: 0.22.1
+      minimist: 1.2.6
+      object.pick: 1.3.0
+      run-parallel: 1.2.0
+      semver: 5.7.1
+      xtend: 4.0.2
     dev: false
 
   /rn-range-slider/2.1.1:
@@ -45031,7 +45775,6 @@ packages:
       react-is: 17.0.2
       shallowequal: 1.1.0
       supports-color: 5.5.0
-    dev: false
 
   /styled-system/5.1.5:
     resolution: {integrity: sha512-7VoD0o2R3RKzOzPK0jYrVnS8iJdfkKsQJNiLRDjikOpQVqQHns/DXWaPZOH4tIKkhAT7I6wIsy9FWTWh2X3q+A==}
@@ -46184,6 +46927,40 @@ packages:
       yargs-parser: 20.2.9
     dev: true
 
+  /ts-jest/27.1.4_ibhx3ehxrt2kgmkik4bkzmyeei:
+    resolution: {integrity: sha512-qjkZlVPWVctAezwsOD1OPzbZ+k7zA5z3oxII4dGdZo5ggX/PL7kvwTM0pXTr10fAtbiVpJaL3bWd502zAhpgSQ==}
+    engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
+    hasBin: true
+    peerDependencies:
+      '@babel/core': '>=7.0.0-beta.0 <8'
+      '@types/jest': ^27.0.0
+      babel-jest: '>=27.0.0 <28'
+      esbuild: '*'
+      jest: ^27.0.0
+      typescript: '>=3.8 <5.0'
+    peerDependenciesMeta:
+      '@babel/core':
+        optional: true
+      '@types/jest':
+        optional: true
+      babel-jest:
+        optional: true
+      esbuild:
+        optional: true
+    dependencies:
+      '@types/jest': 27.5.1
+      bs-logger: 0.2.6
+      fast-json-stable-stringify: 2.1.0
+      jest: 27.5.1_ts-node@10.7.0
+      jest-util: 27.5.1
+      json5: 2.2.1
+      lodash.memoize: 4.1.2
+      make-error: 1.3.6
+      semver: 7.3.7
+      typescript: 4.6.4
+      yargs-parser: 20.2.9
+    dev: true
+
   /ts-jest/28.0.2_qy5m32hwmbz5mebulkdtchzcz4:
     resolution: {integrity: sha512-IOZMb3D0gx6IHO9ywPgiQxJ3Zl4ECylEFwoVpENB55aTn5sdO0Ptyx/7noNBxAaUff708RqQL4XBNxxOVjY0vQ==}
     engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
@@ -46791,7 +47568,7 @@ packages:
     optional: true
 
   /ultron/1.0.2:
-    resolution: {integrity: sha1-rOEWq1V80Zc4ak6I9GhTeMiy5Po=}
+    resolution: {integrity: sha512-QMpnpVtYaWEeY+MwKDN/UdKlE/LsFZXM5lO1u7GaZzNgmIbGixHEmVMIKT+vqYOALu3m5GYQy9kz4Xu4IVn7Ow==}
 
   /ultron/1.1.1:
     resolution: {integrity: sha512-UIEXBNeYmKptWH6z8ZnqTeS8fV74zG0/eRU9VGkpzz+LIJNs8W/zM/L+7ctCkRrgbNnnR0xxw4bKOr0cW0N0Og==}
@@ -50056,7 +50833,6 @@ packages:
       string-width: 4.2.3
       y18n: 5.0.8
       yargs-parser: 21.0.1
-    dev: true
 
   /yargs/8.0.2:
     resolution: {integrity: sha1-YpmpBVsc78lp/355wdkY3Osiw2A=}
