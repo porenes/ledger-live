@@ -5,20 +5,16 @@ import {
   listTokens,
   isCurrencySupported,
 } from "@ledgerhq/live-common/lib/currencies";
-import { distribute, Action, State } from "@ledgerhq/live-common/lib/apps";
-import { App } from "@ledgerhq/live-common/lib/types/manager";
+import { distribute } from "@ledgerhq/live-common/lib/apps";
 import { useAppsSections } from "@ledgerhq/live-common/lib/apps/react";
 
 import { Text, Flex } from "@ledgerhq/native-ui";
 
 import { Trans } from "react-i18next";
-import { ListAppsResult } from "@ledgerhq/live-common/lib/apps/types";
-import { ManagerTab } from "./Manager";
 
 import AppFilter from "./AppsList/AppFilter";
 
 import DeviceCard from "./Device";
-import FirmwareManager from "./Firmware";
 import AppRow from "./AppsList/AppRow";
 
 import Searchbar from "./AppsList/Searchbar";

@@ -2,7 +2,6 @@ import React, { useState, useCallback, useMemo } from "react";
 import { Linking } from "react-native";
 import { Trans } from "react-i18next";
 
-import { State } from "@ledgerhq/live-common/lib/apps";
 import { isLiveSupportedApp } from "@ledgerhq/live-common/lib/apps/logic";
 
 import styled from "styled-components/native";
@@ -91,7 +90,10 @@ const InstallSuccessBar = ({ state, navigation, disable }: Props) => {
   const onClose = useCallback(() => setHasBeenShown(true), []);
 
   return (
-    <BottomModal isOpened={successInstalls.length >= 1} onClose={onClose}>
+    <BottomModal
+      isOpened={successInstalls.length >= 1 && !state.currentError}
+      onClose={onClose}
+    >
       <Flex alignItems="center">
         <AppIcon app={app} size={48} radius={14} />
         <TextContainer>
