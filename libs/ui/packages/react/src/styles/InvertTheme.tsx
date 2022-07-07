@@ -44,6 +44,5 @@ export const InvertThemeV3 = ({ children }: any): React.ReactElement => {
     }),
     [v3RevertTheme],
   );
-  console.log("ok");
   return <ThemeProvider theme={newTheme}>{children}</ThemeProvider>;
 };
