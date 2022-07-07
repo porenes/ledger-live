@@ -10,7 +10,7 @@ import "../env";
 // initially we will send errors (anonymized as we don't initially know "userId" neither)
 let shouldSendCallback = () => true;
 
-let productionBuildSampleRate = 0.01;
+let productionBuildSampleRate = 0.2;
 if (process.env.SENTRY_SAMPLE_RATE) {
   productionBuildSampleRate = parseFloat(process.env.SENTRY_SAMPLE_RATE);
 }
@@ -45,6 +45,7 @@ export function init(Sentry: any) {
         git_commit: __GIT_REVISION__,
         osType: os.type(),
         osRelease: os.release(),
+        process: process?.title || "",
       },
       user: {
         ip_address: null,
