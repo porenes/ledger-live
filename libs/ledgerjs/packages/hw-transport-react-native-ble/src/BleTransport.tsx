@@ -43,6 +43,7 @@ class Ble extends Transport {
     super();
     this.id = deviceId;
     this.queueObserver;
+    console.log("bimbim registering app state subscription");
     this.appStateSubscription = AppState.addEventListener(
       "change",
       this.onAppStateChanged
@@ -57,8 +58,10 @@ class Ble extends Transport {
   }
 
   private onAppStateChanged = (state) => {
+    console.log("bimbim appstate", state);
     if (this.appState !== state) {
-      Ble.log("appstate change detected", state);
+      // Ble.log("appstate change detected", state);
+      console.log("bimbim appstate inside", state);
       this.appState = state;
       NativeBle.onAppStateChange(state === "active");
     }
@@ -106,7 +109,7 @@ class Ble extends Transport {
     //     }
     //   }
     // }
-  }; 
+  };
 
   static onBridgeGlobalEvent(rawEvent): void {
     const { event, type, data } = rawEvent;
@@ -153,8 +156,12 @@ class Ble extends Transport {
     observer: Observer<{ type: string }>
   ): Subscription => {
     Ble.stateObserver = observer;
-    console.log("bimbimbim", NativeBle.observeBluetooth)
     NativeBle.observeBluetooth();
+
+    AppState.addEventListener("change", (state) => {
+      console.log("bimbimbim state", state);
+      NativeBle.onAppStateChange(state === "active");
+    });
 
     return {
       unsubscribe: () => {

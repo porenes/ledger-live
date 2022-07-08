@@ -1,36 +1,45 @@
 package com.hwtransportreactnativeble
 
 import com.facebook.react.bridge.*
-import com.facebook.react.modules.core.DeviceEventManagerModule
 import com.ledger.live.ble.BleManager
+import java.util.*
+import kotlin.concurrent.timerTask
 
 
 class HwTransportReactNativeBleModule(reactContext: ReactApplicationContext) :
     ReactContextBaseJavaModule(reactContext) {
     var context: ReactApplicationContext = reactContext
     var bleManager = BleManager.Companion.getInstance(context)
-    var jsAwake = true
-
+    var eventEmitter = EventEmitter.getInstance(reactContext)
+    var i = 0
     override fun getName(): String {
         return "HwTransportReactNativeBle"
-    }
-
-    private fun sendEvent(reactContext: ReactContext, params: WritableMap?) {
-        reactContext
-            .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter::class.java)
-            .emit("BleTransport", params)
     }
 
     @ReactMethod
     fun observeBluetooth() {
         // TODO, need to know when bluetooth starts/stops being available
+        val test = Timer()
+        test.scheduleAtFixedRate(timerTask() {
+            i += 1
+                eventEmitter.dispatch(Arguments.createMap().apply {
+                    putString("event", "new-device")
+                    putString("type", "wadus")
+                    putMap("data", Arguments.createMap().apply {
+                        putString("uuid", "ID:$i")
+                        putString("name", "ID:$i")
+                        putString("service", "")
+                        putString("rssi", "100")
+                    })
+                })
+        },0, 1000)
     }
 
     @ReactMethod
     fun listen(promise: Promise) {
         bleManager.startScanning {
             for (device in it) {
-                sendEvent(context,  Arguments.createMap().apply {
+                eventEmitter.dispatch(Arguments.createMap().apply {
                     putString("event", "new-device")
                     putString("type", device.id)
                     putMap("data", Arguments.createMap().apply {
@@ -66,7 +75,7 @@ class HwTransportReactNativeBleModule(reactContext: ReactApplicationContext) :
     }
     @ReactMethod
     fun onAppStateChange(awake: Boolean) {
-        jsAwake = awake // TODO implement the proper event emitter to not emit while in bg
+        eventEmitter.onAppStateChange(awake)
     }
 
     @ReactMethod
