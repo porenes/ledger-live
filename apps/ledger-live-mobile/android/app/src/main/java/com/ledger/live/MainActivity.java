@@ -1,26 +1,17 @@
 package com.ledger.live;
 import expo.modules.ReactActivityDelegateWrapper;
 
-import android.app.PendingIntent;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
-import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
-
-import androidx.core.app.NotificationCompat;
-import androidx.core.app.NotificationManagerCompat;
-
 import com.facebook.react.ReactActivity;
-
 import org.devio.rn.splashscreen.SplashScreen;
-
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.ReactRootView;
-
 import com.swmansion.gesturehandler.react.RNGestureHandlerEnabledRootView;
 import java.util.Locale;
 
@@ -50,7 +41,7 @@ public class MainActivity extends ReactActivity {
             }
         }
         super.onCreate(null);
-        /**
+        /*
          * Addresses an inconvenient side-effect of using `password-visible`, that
          * allowed styled texts to be pasted (receiver's address for instance) retaining
          * the styles of the source text.

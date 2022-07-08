@@ -88,28 +88,28 @@ class Ble extends Transport {
   };
 
   private onBridgeEvent = (rawEvent) => {
-    const { event, type, data } = JSON.parse(rawEvent);
-    if (event === "task") {
-      if (this.queueObserver) {
-        if (type === "runComplete") {
-          // we've completed a queue, complete the subject
-          this.queueObserver.complete();
-        } else if (type === "runError") {
-          this.queueObserver.error(Ble.remapError(data.message));
-        } else {
-          const progress = Math.round((data?.progress || 0) * 100) / 100;
-          this.queueObserver.next({
-            type,
-            appOp: { name: data.name, type: data.type },
-            progress: type === "runProgress" ? progress || 0 : undefined,
-          });
-        }
-      }
-    }
-  };
+    // const { event, type, data } = JSON.parse(rawEvent);
+    // if (event === "task") {
+    //   if (this.queueObserver) {
+    //     if (type === "runComplete") {
+    //       // we've completed a queue, complete the subject
+    //       this.queueObserver.complete();
+    //     } else if (type === "runError") {
+    //       this.queueObserver.error(Ble.remapError(data.message));
+    //     } else {
+    //       const progress = Math.round((data?.progress || 0) * 100) / 100;
+    //       this.queueObserver.next({
+    //         type,
+    //         appOp: { name: data.name, type: data.type },
+    //         progress: type === "runProgress" ? progress || 0 : undefined,
+    //       });
+    //     }
+    //   }
+    // }
+  }; 
 
   static onBridgeGlobalEvent(rawEvent): void {
-    const { event, type, data } = JSON.parse(rawEvent);
+    const { event, type, data } = rawEvent;
     if (event === "new-device") {
       console.log("BIMBIM new device ", data);
       Ble.scanObserver?.next({
@@ -139,7 +139,7 @@ class Ble extends Transport {
     }
 
     try {
-      const _uuid = await NativeBle.connect(uuid, "no_longer_used");
+      const _uuid = await NativeBle.connect(uuid);
       Ble.log(`connected to (${_uuid})`);
       return new Ble(_uuid);
     } catch (error) {
@@ -153,6 +153,7 @@ class Ble extends Transport {
     observer: Observer<{ type: string }>
   ): Subscription => {
     Ble.stateObserver = observer;
+    console.log("bimbimbim", NativeBle.observeBluetooth)
     NativeBle.observeBluetooth();
 
     return {

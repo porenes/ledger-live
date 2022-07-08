@@ -913,7 +913,6 @@ importers:
       '@ledgerhq/json-bignumber': ^1.1.0
       '@ledgerhq/live-app-sdk': ^0.6.1
       '@ledgerhq/logs': workspace:^
-      '@ledgerhq/types-devices': workspace:^
       '@polkadot/types': 8.5.1
       '@polkadot/types-known': 8.5.1
       '@polkadot/util': 9.2.1
@@ -1072,7 +1071,6 @@ importers:
       '@ledgerhq/json-bignumber': 1.1.0
       '@ledgerhq/live-app-sdk': 0.6.1
       '@ledgerhq/logs': link:../ledgerjs/packages/logs
-      '@ledgerhq/types-devices': link:../ledgerjs/packages/types-devices
       '@polkadot/types': 8.5.1
       '@polkadot/types-known': 8.5.1
       '@polkadot/util': 9.2.1
