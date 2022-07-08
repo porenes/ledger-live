@@ -13,7 +13,10 @@ const defineStyleFromTheme = (lightAsset: any, darkAsset: any) => (p: ThemeProps
 
 const Illustration = ({ lightSource, darkSource, size }: Props) => {
   const Img: ThemedComponent<{}> = styled.div`
-    background: url(${p => defineStyleFromTheme(lightSource, darkSource)(p)}) no-repeat center;
+    background: url(${p => defineStyleFromTheme(lightSource, darkSource)(p)});
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
     width: ${size}px;
     height: ${size}px;
   `;
