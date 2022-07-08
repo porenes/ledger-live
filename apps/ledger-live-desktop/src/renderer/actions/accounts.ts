@@ -1,6 +1,6 @@
 import { Dispatch } from "redux";
 
-import type { Account, SubAccount } from "@ledgerhq/live-common/types/index";
+import { Account, SubAccount } from "@ledgerhq/live-common/types/index";
 import { AccountComparator } from "@ledgerhq/live-common/account/ordering";
 import { implicitMigration } from "@ledgerhq/live-common/migrations/accounts";
 import { getKey } from "~/renderer/storage";
