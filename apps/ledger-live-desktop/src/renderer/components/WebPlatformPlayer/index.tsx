@@ -189,7 +189,7 @@ const WebPlatformPlayer = ({ manifest, onClose, inputs, config }: Props) => {
   );
 
   const signMessage = useCallback(
-    (accountId: string, message: string) => {
+    ({ accountId, message }: { accountId: string, message: string }) => {
       return signMessageCallback({ manifest, dispatch, accounts }, accountId, message);
     },
     [accounts, dispatch],
