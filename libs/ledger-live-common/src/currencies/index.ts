@@ -31,6 +31,7 @@ import {
   getTokenById,
   findCompoundToken,
   getAbandonSeedAddress,
+  cryptocurrenciesById,
 } from "@ledgerhq/cryptoassets";
 export * from "./support";
 import { parseCurrencyUnit } from "./parseCurrencyUnit";
@@ -87,4 +88,5 @@ export {
   sanitizeValueString,
   getCurrencyColor,
   findCompoundToken,
+  cryptocurrenciesById,
 };

@@ -23,6 +23,7 @@ setPlatformVersion("0.0.1");
 setSupportedCurrencies([
   "bitcoin",
   "ethereum",
+  "ethereum_lite",
   "bsc",
   "polygon",
   "elrond",
@@ -55,6 +56,7 @@ setSupportedCurrencies([
   "bitcoin_testnet",
   "ethereum_ropsten",
   "ethereum_goerli",
+  "ethereum_goerli_lite",
   "cosmos_testnet",
   "crypto_org_croeseid",
   "crypto_org",

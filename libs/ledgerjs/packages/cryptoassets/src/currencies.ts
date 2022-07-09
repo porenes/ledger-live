@@ -75,7 +75,7 @@ const ethereumUnits = (name, code) => [
   },
 ];
 
-const cryptocurrenciesById: Record<string, CryptoCurrency> = {
+export const cryptocurrenciesById: Record<string, CryptoCurrency> = {
   near: {
     type: "CryptoCurrency",
     id: "near",
@@ -1016,6 +1016,34 @@ const cryptocurrenciesById: Record<string, CryptoCurrency> = {
           "https://blockscout.com/etc/mainnet/address/$address/transactions",
       },
     ],
+  },
+  ethereum_lite: {
+    type: "CryptoCurrency",
+    id: "ethereum_lite",
+    coinType: 60,
+    name: "Ethereum Lite",
+    managerAppName: "Ethereum",
+    ticker: "ETH",
+    scheme: "ethereum",
+    color: "#0ebdcd",
+    symbol: "Ξ",
+    units: ethereumUnits("ether", "ETH"),
+    family: "evm",
+    blockAvgTime: 15,
+    ethereumLikeInfo: {
+      baseChain: "mainnet",
+      chainId: 1,
+      networkId: 1,
+      hardfork: "petersburg",
+    },
+    explorerViews: [
+      {
+        tx: "https://etherscan.io/tx/$hash",
+        address: "https://etherscan.io/address/$address",
+        token: "https://etherscan.io/token/$contractAddress?a=$address",
+      },
+    ],
+    rpc: "https://mainnet.infura.io/v3/c40608c251d04d5b82cc1f88ed49f0d8",
   },
   ether1: {
     type: "CryptoCurrency",
@@ -3127,6 +3155,35 @@ const cryptocurrenciesById: Record<string, CryptoCurrency> = {
         address: "https://goerli.etherscan.io/address/$address",
       },
     ],
+  },
+  ethereum_goerli_lite: {
+    type: "CryptoCurrency",
+    id: "ethereum_goerli_lite",
+    coinType: 60,
+    name: "Ethereum Goerli Lite",
+    managerAppName: "Ethereum",
+    ticker: "ETH",
+    deviceTicker: "ETH",
+    scheme: "ethereum_goerli",
+    color: "#00ff00",
+    units: ethereumUnits("ether", "ETH").map(makeTestnetUnit),
+    isTestnetFor: "ethereum",
+    disableCountervalue: true,
+    family: "evm",
+    blockAvgTime: 15,
+    ethereumLikeInfo: {
+      baseChain: "goerli",
+      chainId: 5, // goerli
+      networkId: 5,
+      hardfork: "petersburg",
+    },
+    explorerViews: [
+      {
+        tx: "https://goerli.etherscan.io/tx/$hash",
+        address: "https://goerli.etherscan.io/address/$address",
+      },
+    ],
+    rpc: "https://goerli.infura.io/v3/c40608c251d04d5b82cc1f88ed49f0d8",
   },
   stacks: {
     type: "CryptoCurrency",
